@@ -58,9 +58,6 @@ module.exports = {
 
 
         Target.ban({days: Amount, reason: Reason})
-
-        // interaction.reply({ embeds: [new MessageEmbed().setColor("GREEN").setDescription(`✅ **${Target.user.username}** has been banned.`)], fetchReply: true})
-        
         
         const Response = new MessageEmbed()
         .setColor("GREEN")

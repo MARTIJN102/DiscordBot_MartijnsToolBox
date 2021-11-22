@@ -41,13 +41,9 @@ module.exports = {
 
         Target.kick({ reason: Reason })
 
-        // interaction.reply({ embeds: [new MessageEmbed().setColor("GREEN").setDescription(`✅ **${Target.user.username}** has been banned.`)], fetchReply: true})
-
-
         const Response = new MessageEmbed()
             .setColor("GREEN")
             .setDescription(`✅ **${Target.user.username}** has been kicked.`)
         interaction.reply({ embeds: [Response], fetchReply: true}).then(msg => { setTimeout(() => msg.delete(), 5000) });
-        // setTimeout(() => message.delete().catch(() => { }), 2500);
     }
 }

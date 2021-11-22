@@ -1,7 +1,7 @@
 const { CommandInteraction, Client } = require("discord.js");
 
 module.exports = {
-    name: "emitt",
+    name: "emit",
     description: "Event emitter",
     permission: "ADMINISTRATOR",
     options: [

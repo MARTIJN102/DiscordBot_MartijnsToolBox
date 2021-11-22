@@ -39,13 +39,6 @@ module.exports = async (client) => {
 
     console.log(Table.toString());
 
-    // PERMISSIONS CHECK //
-
-    // client.on('ready', async () => {
-    //     client.guilds.cache.forEach((guild) => {
-
-    //         guild.commands.set(CommandsArray).then(async (command) => {
-
     client.on("ready", async () => {
         const MainGuild = await client.guilds.cache.get("752515279082356821");
 

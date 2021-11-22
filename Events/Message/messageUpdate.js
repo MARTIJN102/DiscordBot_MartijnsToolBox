@@ -1,4 +1,5 @@
-const { MessageEmbed, Message, webhookClient, WebhookClient } = require("discord.js");
+const { MessageEmbed, Message, WebhookClient } = require("discord.js");
+const { messageUpdateAndDelete } = require("../../config.json")
 
 module.exports = {
     name: "messageUpdate",
@@ -22,7 +23,7 @@ module.exports = {
         .setDescription(`📘 A [message](${newMessage.url}) by ${newMessage.author} was **edited** in ${newMessage.channel}.\n
         **Original:**\n \`\`\`${Original}\`\`\` \n**Edited:**\n\`\`\`${Edited}\`\`\``)
 
-        new WebhookClient({ url: "https://discord.com/api/webhooks/906509625183043604/j-_yjdPsE7qfIpjv_TENwaqBnje6u3tpKv2_-prOkQgecwlR8IAyI7oSi23ojSM5UzaE"}
+        new WebhookClient({ url: messageUpdateAndDelete}
         ).send({embeds: [Log]}).catch((err) => console.log(err));
 
     }

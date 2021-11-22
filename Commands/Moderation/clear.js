@@ -30,11 +30,8 @@ module.exports = {
 
         // Code bye: KevinFoged 
 
-        // if (Amount > 100 || Amount <= 0)
-        //     return interaction.reply("The amount must be between 0 and 100");
-
-        if (Amount <= 0) return interaction.reply("bro... you gotta give me more than 0.") // .then(msg => { setTimeout(() => msg.delete(), 5000) });
-        if (Amount > 100) return interaction.reply("bro... chill, more than 100 is not allowed.") // .then(msg => { setTimeout(() => msg.delete(), 5000) });
+        if (Amount <= 0) return interaction.reply("bro... you gotta give me more than 0.")
+        if (Amount > 100) return interaction.reply("bro... chill, more than 100 is not allowed.")
 
         const Messages = await channel.messages.fetch();
 

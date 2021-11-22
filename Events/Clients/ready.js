@@ -11,8 +11,6 @@ module.exports = {
     execute(client) {
         console.log("The bot is now ready")
 
-        // client.user.setActivity("kids", {type: "WATCHING"})
-
         setInterval(() => {
             if (client.maintenance) {
                 client.user.setStatus("dnd");
@@ -34,8 +32,5 @@ module.exports = {
         }).catch((err) => {
             console.log(err)
         })
-
-        // ==============================================================
-
     }
 }

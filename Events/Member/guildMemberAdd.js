@@ -1,4 +1,5 @@
 const { MessageEmbed, WebhookClient, GuildMember } = require("discord.js")
+const { guildMemberAdd } = require("../../config.json");
 
 module.exports = {
     name: "guildMemberAdd",
@@ -12,8 +13,7 @@ module.exports = {
         member.roles.add("752519691976573008");
         
         const Welcomer = new WebhookClient({
-            id: "904535782340067328",
-            token: "yVRMoCIQXWOG7Rg0KVTgdd5QJJIy9WxfnE8lqqvmyMnt-GVWrNylkhrEh1VL5nAovwKl"
+            url : guildMemberAdd
         });
 
         const Welcome = new MessageEmbed()

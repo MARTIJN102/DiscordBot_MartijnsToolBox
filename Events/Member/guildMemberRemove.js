@@ -1,4 +1,5 @@
 const { MessageEmbed, WebhookClient, GuildMember } = require("discord.js")
+const { guildMemberRemove } = require("../../config.json");
 
 module.exports = {
     name: "guildMemberRemove",
@@ -10,8 +11,7 @@ module.exports = {
         const { user, guild } = member;
 
         const Leave = new WebhookClient({
-            id: "904543880127582249",
-            token: "eZlh8aEoj4jgJ4rbLQQ1ffjQJxfK_KW_OS3ZDU7JdjlLK-dTjBkVnGfPJC3H0sym0SDw"
+            url : guildMemberRemove
         });
 
         const ByeBye = new MessageEmbed()

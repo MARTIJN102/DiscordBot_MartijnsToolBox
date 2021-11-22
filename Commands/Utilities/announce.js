@@ -1,4 +1,5 @@
 const { CommandInteraction, MessageEmbed, WebhookClient } = require("discord.js");
+const { announce } = require("../../config.json");
 
 module.exports = {
     name: "announce",
@@ -37,7 +38,7 @@ module.exports = {
         interaction.reply({content: "Sending announcement..."})
 
         const announcer = new WebhookClient({
-            url : "https://discord.com/api/webhooks/912117932631408671/unCKNILkIUYBGKR4N6DUjZkobd9QCxp1kbFlT3eRMW0oSod_8YkdQtcJcl2BRbVV3YvJ"
+            url : announce
         });
 
         const title = interaction.options.getString("title");
