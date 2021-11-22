@@ -1,5 +1,4 @@
 const { CommandInteraction, MessageEmbed } = require("discord.js");
-// const database = require("./../../database");
 
 module.exports = {
     name: "maintenance",

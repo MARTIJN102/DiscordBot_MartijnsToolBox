@@ -11,10 +11,6 @@ module.exports = {
      * @param { CommandInteraction } interaction
      */
     async execute(interaction) {
-        // const kitten = new MessageEmbed()
-        // .setTitle("Kitten")
-
-        // interaction.reply({embeds: [kitten], fetchReply: true, ephemeral: true }).then(msg => {setTimeout(() => msg.delete(), 5000) })
 
         const url = "https://some-random-api.ml/img/dog/";
         const urlfact = "https://some-random-api.ml/facts/dog";
@@ -40,6 +36,6 @@ module.exports = {
             .setTitle("Random Dog Fact")
             .setDescription(`\`\`\`${dataFact}\`\`\``, true)
 
-        await interaction.reply({ embeds: [doggo, dogFact] }) //.then(msg => { setTimeout(() => msg.delete(), 10000) })
+        await interaction.reply({ embeds: [doggo, dogFact] })
     }
 }

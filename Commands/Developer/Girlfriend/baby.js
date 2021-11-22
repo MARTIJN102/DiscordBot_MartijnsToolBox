@@ -16,7 +16,5 @@ module.exports = {
         .setTitle("To my woman")
         .setDescription(`I LOVE YOU <@529422449540988949>`)
         return interaction.reply({ embeds: [myWoman], ephemeral: true })
-        
-        // interaction.reply({ content: "PONG" })
     }
 }

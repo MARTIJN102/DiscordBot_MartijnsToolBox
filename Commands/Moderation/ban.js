@@ -63,6 +63,5 @@ module.exports = {
         .setColor("GREEN")
         .setDescription(`✅ **${Target.user.username}** has been banned.`)
         interaction.reply({ embeds: [Response], fetchReply: true }).then(msg => { setTimeout(() => msg.delete(), 5000) });
-        // setTimeout(() => message.delete().catch(() => { }), 2500);
     }
 }

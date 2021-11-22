@@ -36,6 +36,6 @@ module.exports = {
             .setTitle("Random Cat Fact")
             .setDescription(`\`\`\`${dataFact}\`\`\``, true)
 
-        await interaction.reply({ embeds: [cat, catFact]}) //.then(msg => { setTimeout(() => msg.delete(), 10000) })
+        await interaction.reply({ embeds: [cat, catFact]})
     }
 }
