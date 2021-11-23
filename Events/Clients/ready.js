@@ -1,4 +1,4 @@
-const { Client, MessageEmbed } = require("discord.js")
+const { Client } = require("discord.js")
 const mongoose = require("mongoose")
 const { Database } = require("../../config.json")
 
