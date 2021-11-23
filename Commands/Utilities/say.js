@@ -19,7 +19,7 @@ module.exports = {
     execute(interaction) {
 
         interaction.reply({content: "Will do boss.", ephemeral: true})
-        
+
         const say = interaction.options.getString("say");
 
         interaction.channel.send({content: `${say}`})

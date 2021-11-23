@@ -16,6 +16,8 @@
     "distube": "^3.0.2",
     "ffmpeg-static": "^4.4.0",
     "glob": "^7.2.0",
+    "insult": "^0.0.3",
+    "insult-compliment": "^1.1.4",
     "libsodium-wrappers": "^0.7.9",
     "mongoose": "^6.0.12",
     "node.js": "^0.0.1-security",
