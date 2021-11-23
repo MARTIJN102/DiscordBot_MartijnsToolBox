@@ -17,7 +17,7 @@ module.exports = {
      */
     execute(interaction) {
 
-        const Target = interaction.options.getMember('target') || interaction.member;
+        const Target = interaction.options.getMember('target');
         const compliment = InsultCompliment.Compliment();
 
         interaction.reply({ content: `${Target}, ${compliment}` })

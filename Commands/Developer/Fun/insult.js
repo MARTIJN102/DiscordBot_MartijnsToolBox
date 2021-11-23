@@ -1,9 +1,9 @@
-const { CommandInteraction } = require('discord.js');
-const insulter = require('insult');
+const { CommandInteraction } = require("discord.js");
+const axios = require("axios");
 
 module.exports = {
     name: "insult",
-    description: "Insults the specific player you mention",
+    description: "Insults a person.",
     options: [
         {
             name: "target",
@@ -13,13 +13,13 @@ module.exports = {
         }
     ],
     /**
-     * @param { CommandInteraction } interaction
+     * @param {CommandInteraction} interaction 
      */
-    execute(interaction) {
+    async execute(interaction) {
 
-        const Target = interaction.options.getMember('target') || interaction.member;
-        const insult = insulter.Insult();
+        const response = await axios.get(`https://evilinsult.com/generate_insult.php?lang=en&amp;type=json`);
+        const Target = interaction.options.getMember('target');
 
-        interaction.reply({ content: `${Target}, ${insult}`})
+        interaction.reply({ content: `${Target}, ${response.data}` })
     }
 }
