@@ -1,5 +1,6 @@
 const { MessageEmbed, Client, GuildMember} = require('discord.js');
 const { blacklistedWords } = require("../../Validation/BlackListedWords");
+const axios = require('axios');
 
 module.exports = {
     name: 'messageCreate',
@@ -12,6 +13,14 @@ module.exports = {
      */
     async execute(message, client, member) {
         if (message.author.bot) return;
+
+        if (message.channel.type == 'DM' && message.content === "insult me"){
+
+            const response = await axios.get(`https://evilinsult.com/generate_insult.php?lang=en&amp;type=json`);
+
+            return message.reply({ content: `${response.data}` })
+        }
+
         if (message.channel.type == 'DM') {
 
             const DM = message.content
