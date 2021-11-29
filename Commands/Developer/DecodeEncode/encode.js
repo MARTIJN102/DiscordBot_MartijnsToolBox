@@ -37,9 +37,10 @@ module.exports = {
 
             const binaryEmbed = new MessageEmbed()
                 .setColor("DARK_BUT_NOT_BLACK")
-                .setTitle("Encode")
+                .setTitle("Encoder")
                 .addFields(
-                    { name: "Encoded:", value: `\`\`\`${BINARY.data.binary}\`\`\`` }
+                    { name: "Decoded Format:", value: `\`\`\`${Binary}\`\`\`` },
+                    { name: "Binary Encoded Format:", value: `\`\`\`${BINARY.data.binary}\`\`\`` }
                 )
                 .setTimestamp()
 
@@ -49,9 +50,10 @@ module.exports = {
         const base64Embed = new MessageEmbed()
 
             .setColor("DARK_BUT_NOT_BLACK")
-            .setTitle("Encode")
+            .setTitle("Encoder")
             .addFields(
-                { name: "Encoded:", value: `\`\`\`${BASE64.data.base64}\`\`\`` }
+                { name: "Decoded Format:", value: `\`\`\`${Base64}\`\`\`` },
+                { name: "Base64 Encoded Format:", value: `\`\`\`${BASE64.data.base64}\`\`\`` }
             )
             .setTimestamp()
             
