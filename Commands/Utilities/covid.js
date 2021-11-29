@@ -21,34 +21,49 @@ module.exports = {
 
         const Country = interaction.options.getString("country")
 
-        const url = await axios.get("https://disease.sh/v3/covid-19/countries/" + Country)
+        try {
+            const url = await axios.get("https://disease.sh/v3/covid-19/countries/" + Country)
 
-        console.log(url.data)
+            const covidEmbed = new MessageEmbed()
+                .setColor("YELLOW")
+                .setTitle(`Covid info about: [${url.data.country}]`)
+                .addFields(
+                    //{", value: `${url.data.country}`},
 
-        const covidEmbed = new MessageEmbed()
-        .setTitle(`Covid info about: [${url.data.country}]`)
-        .addFields(
-            //{name: "Country:", value: `${url.data.country}`},
-            {name: "Cases:", value: `\`\`\`${url.data.cases}\`\`\``, inline: true},
-            {name: "Cases Today:", value: `\`\`\`${url.data.todayCases}\`\`\``, inline: true},
-            {name: '\u200b', value: '\u200b', inline: false},
-            {name: "Deaths:", value: `\`\`\`${url.data.deaths}\`\`\``, inline: true},
-            {name: "Deaths Today:", value: `\`\`\`${url.data.todayDeaths}\`\`\``, inline: true},
-            {name: '\u200b', value: '\u200b', inline: false},
-            {name: "Recovered:", value: `\`\`\`${url.data.recovered}\`\`\``, inline: true},
-            {name: "Recovered Today:", value: `\`\`\`${url.data.todayRecovered}\`\`\``, inline: true},
-            {name: '\u200b', value: '\u200b', inline: false},
-            {name: "Active:", value: `\`\`\`${url.data.active}\`\`\``, inline: true},
-            {name: "Critical:", value: `\`\`\`${url.data.critical}\`\`\``, inline: true},
-            {name: '\u200b', value: '\u200b', inline: false},
-            {name: "Tests:", value: `\`\`\`${url.data.tests}\`\`\``, inline: true},
-            {name: "Tests Per One Million:", value: `\`\`\`${url.data.testsPerOneMillion}\`\`\``, inline: true},
-            {name: '\u200b', value: '\u200b', inline: false},
-            {name: "Cases Per One Million:", value: `\`\`\`${url.data.casesPerOneMillion}\`\`\``, inline: true},
-            {name: "Deaths Per One Million:", value: `\`\`\`${url.data.deathsPerOneMillion}\`\`\``},
-        )
+                    { name: "Cases:", value: `\`\`\`${url.data.cases}\`\`\``, inline: true },
+                    { name: "Cases Today:", value: `\`\`\`${url.data.todayCases}\`\`\``, inline: true },
 
-        interaction.reply({embeds: [covidEmbed]})
+                    //{name: '\u200b', value: '\u200b', inline: false},
 
+                    { name: "Deaths:", value: `\`\`\`${url.data.deaths}\`\`\``, inline: true },
+                    { name: "Deaths Today:", value: `\`\`\`${url.data.todayDeaths}\`\`\``, inline: true },
+
+                    { name: '\u200b', value: '\u200b', inline: false },
+
+                    { name: "Recovered:", value: `\`\`\`${url.data.recovered}\`\`\``, inline: true },
+                    { name: "Recovered Today:", value: `\`\`\`${url.data.todayRecovered}\`\`\``, inline: true },
+
+                    //{name: '\u200b', value: '\u200b', inline: false},
+
+                    { name: "Active:", value: `\`\`\`${url.data.active}\`\`\``, inline: true },
+                    { name: "Critical:", value: `\`\`\`${url.data.critical}\`\`\``, inline: true },
+
+                    { name: '\u200b', value: '\u200b', inline: false },
+
+                    { name: "Tests:", value: `\`\`\`${url.data.tests}\`\`\``, inline: true },
+                    { name: "Tests Per One Million:", value: `\`\`\`${url.data.testsPerOneMillion}\`\`\``, inline: true },
+
+                    //{name: '\u200b', value: '\u200b', inline: false},
+
+                    { name: "Cases Per One Million:", value: `\`\`\`${url.data.casesPerOneMillion}\`\`\``, inline: true },
+                    { name: "Deaths Per One Million:", value: `\`\`\`${url.data.deathsPerOneMillion}\`\`\`` },
+                )
+                .setImage(`${url.data.countryInfo.flag}`)
+
+            interaction.reply({ embeds: [covidEmbed] })
+
+        }catch (err) {
+            return interaction.reply(`Error:\`\`\`${err}\`\`\``)
+        }
     }
 }

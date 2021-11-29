@@ -24,7 +24,7 @@ module.exports = {
         .setFooter(footer)
         .setTimestamp()
 
-        interaction.reply({embeds: [Response], ephemeral: true})
+        return interaction.reply({embeds: [Response], ephemeral: true})
 
     }
 

@@ -1,5 +1,4 @@
 const { CommandInteraction, MessageEmbed, Client } = require("discord.js");
-const { footer } = require("../../config.json");
 
 module.exports = {
     name: "serverinfo",
@@ -18,7 +17,6 @@ module.exports = {
         .setThumbnail(client.user.avatarURL({ dynamic: true, size: 512 }))
         .addField("Member Count:", `${interaction.guild.memberCount}`)
         .addField(`Amount of Roles: ${interaction.guild.roles.cache.size}`, `${interaction.guild.roles.cache.map(r => r).join(" ").replace("@everyone", " ") || "None"}`)      // what promise..?
-        .setFooter(footer)
 
         interaction.reply({embeds: [Response]})
     }
