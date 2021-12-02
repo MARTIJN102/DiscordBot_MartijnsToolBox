@@ -277,7 +277,7 @@ module.exports = {
                     +
                     `\n\n\n`
                     +
-                    "All the data shown below will contain real world data fetched from https://www.worldometers.info/"
+                    "All the data shown above will contain real world data fetched from https://www.worldometers.info/"
                     +
 
                     `\`\`\``
