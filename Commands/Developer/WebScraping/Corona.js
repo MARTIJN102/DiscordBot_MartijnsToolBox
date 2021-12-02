@@ -54,8 +54,6 @@ module.exports = {
             const txt6 = await SeriousOrCritical.getProperty('textContent');
             const SeriousOrCriticalAmount = await txt6.jsonValue();
 
-            const line = "============================================================="
-
             const CoronaEmbed = new MessageEmbed()
             .setTitle("CORONA DATA")
             .setDescription(
@@ -75,7 +73,7 @@ module.exports = {
                 +
                 `Recovered:                         ${CurrentAmountOfCoronaRecovered}`
                 +
-                `\n\n${line}\n\n`
+                `\n\n\n\n`
                 +
                 `ACTIVE CASES`
                 +
@@ -91,7 +89,7 @@ module.exports = {
                 +
                 `Serious or Critical:               ${SeriousOrCriticalAmount}`
                 +
-                `\n\n${line}\n\n`
+                `\n\n\n\n`
                 +
                 `All the data shown above will contain real world data fetched from https://www.worldometers.info/coronavirus/`
                 +
