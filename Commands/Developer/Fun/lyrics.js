@@ -14,35 +14,41 @@ module.exports = {
     ],
 
     /**
-     * 
      * @param {CommandInteraction} interaction 
      */
 
     async execute(interaction) {
         
+        try {
 
-        const songTitle = interaction.options.getString('songtitle');
+            const songTitle = interaction.options.getString('songtitle');
 
-        const url = await axios.get(`https://some-random-api.ml/lyrics?title=${songTitle}`)
+            const url = await axios.get(`https://some-random-api.ml/lyrics?title=${songTitle}`)
 
-        const embed = new MessageEmbed()
-        .setTitle("Song Finder")
-        .setDescription(
+            const embed = new MessageEmbed()
+            .setTitle("Song Finder")
+            .setThumbnail(url.data.thumbnail.genius)
+            .setDescription(
+                
+                `**Author:** ${url.data.author}`
+                +
+                `\n\n`
+                +
+                `**Song Name:** ${url.data.title}`
+                +
+                `\n\n`
+                +
+                `**Lyrics:**\n\n\`\`\`${url.data.lyrics}\`\`\``
             
-            `**Author:** ${url.data.author}`
-            +
-            `\n\n`
-            +
-            `**Song Name:** ${url.data.title}`
-            +
-            `\n\n`
-            +
-            `**Lyrics:**\n\n\`\`\`${url.data.lyrics}\`\`\``
-        
-        )
+            )
 
+            return interaction.reply({ embeds: [embed] });
+            
+        } catch (err) {
 
-        return interaction.reply({ embeds: [embed] });
+            interaction.reply({content: "Sorry... I could not find that lyrics."})
+
+        }    
 
     }
 }
