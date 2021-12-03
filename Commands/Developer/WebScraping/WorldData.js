@@ -299,6 +299,5 @@ module.exports = {
         setInterval(() => {
             scrapeInfo("https://www.worldometers.info/")
         }, 5000);
-
     }
 }

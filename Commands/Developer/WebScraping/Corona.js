@@ -56,6 +56,7 @@ module.exports = {
 
             const CoronaEmbed = new MessageEmbed()
             .setTitle("CORONA DATA")
+            .setURL(url)
             .setDescription(
                 `\`\`\``
                 +
@@ -73,7 +74,7 @@ module.exports = {
                 +
                 `Recovered:                         ${CurrentAmountOfCoronaRecovered}`
                 +
-                `\n\n\n\n`
+                `\n\n`
                 +
                 `ACTIVE CASES`
                 +
@@ -89,12 +90,9 @@ module.exports = {
                 +
                 `Serious or Critical:               ${SeriousOrCriticalAmount}`
                 +
-                `\n\n\n\n`
-                +
-                `All the data shown above will contain real world data fetched from https://www.worldometers.info/coronavirus/`
-                +
-                "\`\`\`"
+                `\`\`\``
             )
+            .addField("Source:", "`All the data shown above will contain real world data fetched from https://www.worldometers.info/coronavirus/`")
             .setTimestamp()
             .setColor("GREEN")
 
