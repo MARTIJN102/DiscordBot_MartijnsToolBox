@@ -10,6 +10,10 @@ client.meanWoman = false;
 
 client.blacklist = false;
 
+client.AutoMeme = false;
+
+client.WorldDataVariable = false;
+
 const { DisTube } = require("distube");
 const { SpotifyPlugin } = require("@distube/spotify");
 

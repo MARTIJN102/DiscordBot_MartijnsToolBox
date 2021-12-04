@@ -1,14 +1,16 @@
-const { Client } = require("discord.js")
+const { Client, MessageEmbed, CommandInteraction } = require("discord.js")
 const mongoose = require("mongoose")
 const { Database } = require("../../config.json")
+const axios = require("axios")
 
 module.exports = {
     name: "ready",
     once: true,
     /**
+    * @param {CommandInteraction} interaction
     * @param {Client} client
     */
-    execute(client) {
+    execute(interaction, client) {
         console.log("The bot is now ready")
 
         setInterval(() => {
